@@ -10,6 +10,7 @@ export class AppComponent {
   color = '';
   defaultColor = 'violet';
   warningMessage = '';
+  condition = false;
   setWarningMessage() {
     this.color === ''
       ? (this.warningMessage = `Choose your highlight color fool! ${this.defaultColor} doesn't count`)
