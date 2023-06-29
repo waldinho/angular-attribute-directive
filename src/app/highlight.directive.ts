@@ -8,7 +8,6 @@ export class HighlightDirective {
 
   @Input() appHighlight = '';
   @Input() defaultColor = '';
-  @Input() warningMessage = '';
 
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight(this.appHighlight || this.defaultColor);
