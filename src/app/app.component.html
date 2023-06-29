@@ -1,0 +1,25 @@
+<h2>Pick a highlight color</h2>
+
+<div>
+  <input type="radio" name="colors" (click)="color = 'lightgreen'" />Green
+  <input type="radio" name="colors" (click)="color = 'yellow'" />Yellow
+  <input type="radio" name="colors" (click)="color = 'cyan'" />Cyan
+</div>
+
+<p
+  [appHighlight]="color"
+  [defaultColor]="defaultColor"
+  (mouseenter)="setWarningMessage()"
+  (mouseleave)="warningMessage = ''"
+>
+  Highlight me!
+</p>
+
+<div *ngIf="[warningMessage]">
+  <p>{{ warningMessage }}</p>
+</div>
+
+<h3>ngNonBindable with a directive</h3>
+<div ngNonBindable [appHighlight]="'yellow'">
+  This should not evaluate: {{ 1 + 1 }}, but will highlight yellow.
+</div>
